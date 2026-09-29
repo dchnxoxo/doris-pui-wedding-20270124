@@ -69,6 +69,34 @@
     .event-transport .transport-links{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin-top:13px}
     .event-transport .transport-links .map-link{margin-top:0;padding:8px 14px;font-size:12px;letter-spacing:0}
     @media(max-width:420px){.event-transport .transport-route-list{grid-template-columns:1fr}}
+
+    /* The RSVP form sits on a tall, arched cotton-paper card in front of the envelope. */
+    .rsvp{background:#F3EEEB;padding:clamp(85px,9vw,125px) 0 125px}
+    .rsvp-scene{max-width:1020px}
+    .rsvp-envelope{position:relative;z-index:1;width:92%;margin:0 auto}
+    .rsvp-envelope img{width:100%;height:auto;object-fit:contain;filter:drop-shadow(0 14px 18px rgba(74,61,76,.14))}
+    .rsvp-envelope-heading{position:absolute;top:18%;left:50%;width:70%;transform:translateX(-50%);text-align:center;color:#FFF9F2;text-shadow:0 1px 3px rgba(68,53,71,.4);pointer-events:none}
+    .rsvp-envelope-heading .section-kicker{color:inherit}
+    .rsvp-envelope-heading .section-title.tc{color:inherit;margin:9px 0 0}
+    .rsvp .form-card{--arch-rise:clamp(120px,17vw,175px);position:relative;z-index:2;width:100%;margin:calc(-1 * clamp(95px,24vw,230px)) auto 0;padding:calc(var(--arch-rise) * .72 + 30px) clamp(24px,6vw,88px) 48px;border-radius:50% 50% 12px 12px / var(--arch-rise) var(--arch-rise) 12px 12px;background:#FFFFFF url('assets/rsvp-white-paper.jpg') center top/720px auto repeat;box-shadow:0 24px 65px rgba(82,68,80,.18),inset 0 0 0 1px rgba(230,220,215,.75)}
+    .rsvp-flowers{position:absolute;z-index:2;top:0;left:50%;width:clamp(95px,14vw,155px);height:auto;object-fit:contain;transform:translate(calc(-100% - 9px),-87%);filter:drop-shadow(2px 4px 2px rgba(48,38,45,.38)) drop-shadow(0 8px 8px rgba(48,38,45,.17));pointer-events:none}
+    .rsvp-seal{position:absolute;z-index:3;top:0;left:50%;width:clamp(72px,11vw,112px);height:auto;object-fit:contain;transform:translate(-50%,-50%);filter:drop-shadow(1px 3px 2px rgba(52,40,53,.38)) drop-shadow(0 7px 7px rgba(52,40,53,.15));pointer-events:none}
+    .rsvp-invitation-note{text-align:center;margin:0 auto 32px}.rsvp-invitation-note p{margin:0;line-height:2.1}.rsvp-invitation-note .rsvp-date{font:italic 24px var(--serif);color:#958690;margin-top:30px}
+    .rsvp .form-card form{position:relative;z-index:1}
+    .rsvp .field label,.rsvp .group-label{color:#514954}
+    .rsvp .field label small,.rsvp .group-label small{color:#8D7F8C}
+    .rsvp .field input,.rsvp .field select,.rsvp .field textarea{background:#FDFDFD;border-color:#CEC1BF;border-radius:7px}
+    .rsvp .field :is(input,select,textarea).has-value{background:#F4F0F3}
+    .rsvp .field :is(input,select,textarea):focus{border-color:#9A879A;box-shadow:0 0 0 3px #A992AC25}
+    .rsvp .field :is(input,select,textarea):user-invalid{border-color:#B87580}
+    .rsvp .field :is(input,select,textarea):disabled{background:#F3F0F1;border-color:#DCD4D8;color:#9A9299}
+    .rsvp .choice > span{background:rgba(255,254,252,.76);border-color:#CEC1BF}
+    .rsvp .choice input:checked+span{background:#E8DFE8;border-color:#AB9AAB;color:#4D4A56}
+    .rsvp .submit{background:#8D7B8C;border-radius:100px;box-shadow:0 7px 18px rgba(95,78,95,.14)}
+    .rsvp .submit:hover{background:#756574}
+    @media(max-width:760px){.rsvp-invitation-note .rsvp-date{margin-top:10px}}
+    @media(max-width:600px){.rsvp{padding:78px 0 95px}.rsvp-scene{padding:0 17px}.rsvp-envelope{width:94%}.rsvp-envelope-heading{top:17%}.rsvp-flowers{transform:translate(calc(-100% - 9px),calc(-87% + 5px))}.rsvp .form-card{--arch-rise:clamp(115px,32vw,150px);margin-top:calc(-1 * clamp(86px,25vw,132px));padding:calc(var(--arch-rise) * .72 + 20px) 24px 28px}}
+    @media(max-width:380px){.rsvp .form-card{padding-inline:19px}}
   </style>
 </head>
 <body>
@@ -93,10 +121,10 @@
         <div class="transport-links"><a class="map-link" href="https://maps.app.goo.gl/KQazA7qdb9F9wNAV6?g_st=ic" target="_blank" rel="noopener noreferrer">查看地圖 ↗</a><a class="map-link" href="https://www.ninahotelgroup.com/zh-hk/nina-hotel-tsuen-wan-west/location/transportation/" target="_blank" rel="noopener noreferrer">查看酒店交通及巴士路線資料 ↗</a></div>
         </div></details></div></article>
     </div></div></section>
-    <section class="rsvp" id="rsvp"><div class="container rsvp-grid"><div class="rsvp-aside"><div class="section-kicker">RSVP</div><h2 class="section-title tc">出席回函</h2><p>期待在這一天與您相見。請填妥以下資料，讓我們為您安排。</p><div class="rsvp-date">With love, Doris &amp; Pui</div></div><div class="form-card">
+    <section class="rsvp" id="rsvp"><div class="container rsvp-scene"><div class="rsvp-envelope"><img src="assets/rsvp-envelope.png" alt="" loading="lazy"><div class="rsvp-envelope-heading"><div class="section-kicker">RSVP</div><h2 class="section-title tc">出席回函</h2></div></div><div class="form-card"><img class="rsvp-flowers" src="assets/rsvp-babys-breath.png" alt="" aria-hidden="true" loading="lazy"><img class="rsvp-seal" src="assets/rsvp-wax-seal.png" alt="" aria-hidden="true" loading="lazy"><div class="rsvp-invitation-note"><p>期待在這一天與您相見。請填妥以下資料，讓我們為您安排。</p><div class="rsvp-date">With love, Doris &amp; Pui</div></div>
       <form id="rsvp-form" action="https://docs.google.com/forms/d/e/1FAIpQLSeB6m9YlTaNYKrmWM5gnLuOXSMCPMidq9uavBKVR1I3jbwQhQ/formResponse" method="post" target="rsvp-target">
-        <div class="field"><label for="guest-name">姓名 <small>NAME</small></label><input id="guest-name" name="entry.504538040" autocomplete="name" required></div>
-        <div class="field"><label for="phone">手提電話 <small>MOBILE NO.</small></label><input id="phone" name="entry.192616468" type="tel" inputmode="tel" autocomplete="tel" pattern="[0-9]{8}" title="請輸入 8 位數字" required></div>
+        <div class="field-row"><div class="field"><label for="guest-name">姓名 <small>NAME</small></label><input id="guest-name" name="entry.504538040" autocomplete="name" required></div>
+        <div class="field"><label for="phone">手提電話 <small>MOBILE NO.</small></label><input id="phone" name="entry.192616468" type="tel" inputmode="tel" autocomplete="tel" pattern="[0-9]{8}" title="請輸入 8 位數字" required></div></div>
         <div class="field"><label for="relation">與新人關係 <small>RELATIONSHIP</small></label><select id="relation" name="entry.1134360862" required><option value="" selected disabled>請選擇</option><option>男方家人親戚</option><option>男方好友/同事</option><option>女方家人親戚</option><option>女方好友/同事</option><option>錦光堂弟兄姊妹</option></select></div>
         <div class="field"><label for="attendance">出席時段 <small>ATTENDANCE</small></label><select id="attendance" name="entry.877086558" required><option value="" selected disabled>請選擇</option><option>出席證婚及晚宴</option><option>只出席證婚</option><option>只出席晚宴</option><option>當天均未能出席</option></select></div>
         <div class="field-row" id="guest-counts" hidden><div class="field" id="ceremony-field" hidden><label for="ceremony-count">參加證婚人數 <small>CEREMONY GUESTS</small></label><input id="ceremony-count" name="entry.1498135098" type="number" inputmode="numeric" min="0" max="10" step="1"></div><div class="field" id="banquet-field" hidden><label for="banquet-count">參加晚宴人數 <small>BANQUET GUESTS</small></label><input id="banquet-count" name="entry.330869058" type="number" inputmode="numeric" min="0" max="10" step="1"></div></div>
@@ -118,6 +146,10 @@
     (()=>{const events=document.querySelector('.events');if(!events||!('IntersectionObserver' in window)||window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;const cards=events.querySelectorAll('.event');events.classList.add('motion-ready');const observer=new IntersectionObserver(entries=>{entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('is-visible');observer.unobserve(entry.target)}})},{threshold:.12,rootMargin:'0px 0px -40px 0px'});cards.forEach(card=>observer.observe(card))})();
     (()=>{const intro=document.querySelector('.intro');if(!intro||!('IntersectionObserver' in window)||window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;intro.classList.add('motion-ready');const observer=new IntersectionObserver(entries=>{if(entries[0].isIntersecting){intro.classList.add('is-visible');observer.disconnect()}},{threshold:.2});observer.observe(intro)})();
     const form=document.getElementById('rsvp-form'), attendance=document.getElementById('attendance'), ceremony=document.getElementById('ceremony-count'), banquet=document.getElementById('banquet-count'), guestCounts=document.getElementById('guest-counts'), ceremonyField=document.getElementById('ceremony-field'), banquetField=document.getElementById('banquet-field'), questions=document.getElementById('banquet-questions'), dietOther=document.getElementById('diet-other'), dietOtherWrap=document.getElementById('diet-other-wrap'), dietOtherText=document.getElementById('diet-other-text'), dietAllergy=document.getElementById('diet-allergy'), allergyHint=document.getElementById('allergy-hint'), chairNeed=document.getElementById('chair-need'), chairOther=document.getElementById('chair-other'), chairOtherWrap=document.getElementById('chair-other-wrap'), chairOtherText=document.getElementById('chair-other-text'), status=document.getElementById('form-status');
+    const fieldControls=form.querySelectorAll('.field input:not([type="checkbox"]):not([type="radio"]),.field select,.field textarea');
+    function syncFieldColors(){fieldControls.forEach(el=>el.classList.toggle('has-value',el.value.trim()!==''))}
+    form.addEventListener('input',syncFieldColors);form.addEventListener('change',syncFieldColors);
+    form.addEventListener('reset',()=>requestAnimationFrame(syncFieldColors));window.addEventListener('pageshow',syncFieldColors);
     function updateAttendance(){
       const value=attendance.value;
       const hasCeremony=value==='出席證婚及晚宴'||value==='只出席證婚';
@@ -134,11 +166,12 @@
       if(!hasCeremony)ceremony.value=value?'0':'';
       if(!hasBanquet)banquet.value=value?'0':'';
       updateBanquet();
+      syncFieldColors();
     }
     function updateDietOther(){if(!questions.hidden&&dietAllergy.checked)dietOther.checked=true;const show=!questions.hidden&&dietOther.checked;dietOtherWrap.hidden=!show;dietOtherText.disabled=!show;dietOtherText.required=show;if(!show)dietOtherText.value=''}
     function updateChairOther(){if(!questions.hidden&&chairNeed.checked)chairOther.checked=true;const show=!questions.hidden&&chairOther.checked;chairOtherWrap.hidden=!show;chairOtherText.disabled=!show;chairOtherText.required=show;if(!show)chairOtherText.value=''}
     function updateAllergyHint(){allergyHint.hidden=questions.hidden||!dietAllergy.checked}
-    function updateBanquet(){const show=!banquet.disabled&&Number(banquet.value)>0;questions.hidden=!show;questions.querySelectorAll('input').forEach(el=>{el.disabled=!show;if(!show){if(el.type==='checkbox'||el.type==='radio')el.checked=false;else el.value=''}});updateDietOther();updateChairOther();updateAllergyHint()}
+    function updateBanquet(){const show=!banquet.disabled&&Number(banquet.value)>0;questions.hidden=!show;questions.querySelectorAll('input').forEach(el=>{el.disabled=!show;if(!show){if(el.type==='checkbox'||el.type==='radio')el.checked=false;else el.value=''}});updateDietOther();updateChairOther();updateAllergyHint();syncFieldColors()}
     attendance.addEventListener('change',updateAttendance);banquet.addEventListener('input',updateBanquet);dietOther.addEventListener('change',updateDietOther);dietAllergy.addEventListener('change',()=>{updateDietOther();updateAllergyHint()});chairNeed.addEventListener('change',updateChairOther);chairOther.addEventListener('change',updateChairOther);updateAttendance();
     let submitting=false;document.getElementById('rsvp-target').addEventListener('load',()=>{if(!submitting)return;submitting=false;form.querySelector('.submit').disabled=false;status.textContent='回函已送出，謝謝您！';form.reset();updateAttendance()});
     form.addEventListener('submit',()=>{submitting=true;status.textContent='正在送出回函…';form.querySelector('.submit').disabled=true;setTimeout(()=>{if(submitting){submitting=false;form.querySelector('.submit').disabled=false;status.textContent='未能確認提交結果，請稍後再試。';updateAttendance()}},15000)});
